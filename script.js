@@ -1,46 +1,20 @@
-// //instantiation
+var css = document.querySelector("h3");
+var color1 = document.querySelector(".color1");
+var color2 = document.querySelector(".color2");
+var body = document.getElementById("gradient");
 
-// class Player {
-//     constructor (name,type)
-//     {
-//         console.log("player"+this);
-//         this.name =name;
-//         this.type =type;
-//     }
-//     introduce()
-//     {
-//         console.log(`Hi i am ${this.name}, I m a ${this.type}`)
-//     }
-// }
+function setGradient() {
+	body.style.background = 
+	"linear-gradient(to right, " 
+	+ color1.value 
+	+ ", " 
+	+ color2.value 
+	+ ")";
 
-// class Wizard extends Player {
-//     constructor(name, type)
-//     {
-//         super(name,type)
-//         console.log("wizard"+this);
-//     }
-//     play()
-//     {
-//         console.log(`this is weiie name ${this.type}`);
-//     }
-// }
+	css.textContent = body.style.background + ";";
+}
 
+color1.addEventListener("input", setGradient);
 
-// const wizard1 = new Wizard("syam","healer");
-// const wizard2 = new Wizard("silpa","magic");
+color2.addEventListener("input", setGradient);
 
-
-// var c = [1,2,3];
-// var d = c;
-// d.push(154);
-// console.log("c"+c);
-// console.log("d" +d);
-let obj ={a:'a',b:"b",c: {deep:"try to copy me"}};
-let clone = Object.assign({},obj);
-let clone2 = {...obj}
-let superClone = JSON.parse(JSON.stringify(obj));
-obj.c.deep =5;
-console.log("obj"+obj);
-console.log("clone"+clone);
-console.log("clone2"+clone2);
-console.log("superClone"+superClone);
